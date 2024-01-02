@@ -2,7 +2,8 @@ package model
 
 import (
 	"time"
-	
+
+	"github.com/asaskevich/govalidator"
 	uuid "github.com/satori/go.uuid"
 )
 
@@ -13,7 +14,7 @@ type Bank struct {
 }
 
 func (bank *Bank) isValid() error {
-	_, err := goValidator.ValidateStruct(bank)
+	_, err := govalidator.ValidateStruct(bank)
 	if err != nil {
 		return err
 	}
@@ -35,5 +36,5 @@ func NewBank(code string, name string) (*Bank, error) {
 		return nil, err
 	}
 
-	return &Bank, nil
+	return &bank, nil
 }

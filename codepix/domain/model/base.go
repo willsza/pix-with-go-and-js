@@ -1,12 +1,13 @@
 package model
 
 import (
-	"github.com/asaskevich/govalidator"
 	"time"
+
+	"github.com/asaskevich/govalidator"
 )
 
 func init() {
-	goValidator.SetFieldsRequiredByDefault(value: true)
+	govalidator.SetFieldsRequiredByDefault(true)
 }
 
 type Base struct {
